@@ -13,6 +13,10 @@ class Talaba(models.Model):
     def __str__(self):
         return self.ism
 
+    class Meta:
+        verbose_name = 'Talaba'
+        verbose_name_plural = 'Talabalar'
+
 
 class Muallif(models.Model):
     JINS_CHOICES = (
@@ -57,6 +61,9 @@ class Record(models.Model):
     olingan_sana = models.DateField(auto_now_add=True)
     qaytargan_sana = models.DateField(blank=True, null=True)
     qaytardi = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name_plural = "Rekordlar"
 
     def __str__(self):
         if self.talaba:
