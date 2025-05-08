@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kutubxona | Kitob o'quvchi Talabalar</title>
+</head>
+<body>
+<a href="/">Bosh sahifa</a>
+<h1>Kitobi 0 dan ko’p studentlar</h1>
+<hr>
+    {% for student in students %}
+        <p>{{ forloop.counter }}. {{ student.ism }} </p>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kutubxona | Talabalar</title>
+</head>
+<body>
+<a href="/">Bosh sahifa</a>
+<h1>Talabalar ro'yxati</h1>
+<form>
+    <input type="text" name="search" {% if search %} value="{{ search }}" {% endif %} placeholder="Ism bo'yicha qidiring ...">
+    <button>Qidirish</button>
+</form>
+<hr>
+    {% for student in students %}
+        <p>
+            {{ forloop.counter }}.
+            <a href="/students/{{ student.id }}/">
+                {{ student.ism }}
+            </a>
+            <a href="/students/{{ student.id }}/delete/">
+                <button>O'chirish</button>
+            </a>
+        </p>
+    {% endfor %}
+</body>
+</html>
+
+<!-- Jinja2 -->
+

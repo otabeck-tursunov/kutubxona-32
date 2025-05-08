@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kutubxona | Mualliflar</title>
+</head>
+<body>
+    <a href="/">Bosh sahifa</a>
+    <h1>Mualliflar ro'yxati</h1>
+    <form>
+        <select name="gender">
+            <option value="all">Barchasi</option>
+            {% for gender in genders %}
+                <option {% if g == gender.0 %} selected {% endif %}>{{ gender.0 }}</option>
+            {% endfor %}
+        </select>
+        <button>Filter</button>
+    </form>
+    <hr>
+    {% for author in authors %}
+        <p>{{ forloop.counter }}. {{ author.ism }}
+            <a href="/authors/{{ author.id }}/delete/confirm/">
+                <button>🔴delete</button>
+            </a>
+        </p>
+    {% endfor %}
+</body>
+</html>
